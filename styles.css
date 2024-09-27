@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#videoContainer {
+    margin-top: 20px;
+}
+
+iframe {
+    margin: 10px;
+}
