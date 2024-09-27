@@ -1,5 +1,5 @@
 function loadVideos(file) {
-    fetch(`https://raw.githubusercontent.com/veena-g123/LinksRender/refs/heads/main/data/${file}.txt`)
+    fetch(file)
         .then(response => response.text())
         .then(data => {
             const links = data.split('\n');
@@ -7,10 +7,17 @@ function loadVideos(file) {
             container.innerHTML = '';
             links.forEach(link => {
                 const iframe = document.createElement('iframe');
-                iframe.src = link;
+                iframe.src = getEmbedLink(link);
                 iframe.width = '560';
                 iframe.height = '315';
                 container.appendChild(iframe);
             });
         });
+}
+
+function getEmbedLink(link) {
+    if (link.includes('instagram.com')) {
+        return `https://www.instagram.com/p/${link.split('/p/')[1].split('/')[0]}/embed`;
+    }
+    return link;
 }
