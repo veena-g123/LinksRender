@@ -1,5 +1,5 @@
 function loadLinks(category) {
-    fetch(`data/${category}.txt`)
+    fetch(`https://raw.githubusercontent.com/veena-g123/LinksRender/refs/heads/main/data/${category}.txt`)
         .then(response => response.text())
         .then(data => {
             const videoLinks = data.split('\n').filter(link => link.trim() !== '');
