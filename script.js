@@ -1,5 +1,5 @@
 function loadVideos(file) {
-    fetch(`https://raw.githubusercontent.com/veena-g123/LinksRender/refs/heads/main/data/${file}.txt`)
+    fetch(`https://raw.githubusercontent.com/geetsswain/study-resources-links/refs/heads/main/${file}.txt`)
         .then(response => response.text())
         .then(data => {
             const links = data.split('\n');
